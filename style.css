@@ -1,39 +1,65 @@
 body {
   background-color: #222;
   color: white;
-  font-size: 16px;
-  font-family: 'Young Serif';
+  font-size: 14px;
+  font-family: 'Josefin Sans';
   font-weight: normal;
-}
-
-p {
-  text-align: center;
   margin: 0;
 }
 
-p#title {
+header {
+  position: relative;
   text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+p.title {
+  display: inline-block;
+  font-family: 'Young Serif';
   font-size: 10vw;
   font-weight: bold;
 }
 
+p#location {
+  margin-top: 2px;
+  writing-mode: vertical-rl;
+  line-height: 18px;
+  font-size: 11px;
+}
+
 header {
-  margin-top: 50px;
-  font-size: 3vw;
+  margin-top: 30px;
+  transition: opacity 0.5s ease;
 }
 
 main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 80%;
-  margin: 20px auto 0;
-  position: relative;
+  transition: opacity 0.5s ease;
 }
 
-table {
+div#content {
+  position: relative;
+  border: 3px solid #fff;
+}
+
+form#shootList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   position: absolute;
   top: 0;
   right: 0;
   height: 100%;
-  padding: 35px;
+  margin: 0;
+  padding-right: 14px;
+  z-index: 2;
 }
 
 .switch {
@@ -43,12 +69,6 @@ table {
   height: 4vh;
 }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
 .slider {
   position: absolute;
   cursor: pointer;
@@ -56,7 +76,7 @@ table {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #545454;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -70,6 +90,9 @@ table {
   width: 7vw;
   left: 2px;
   bottom: -1px;
+  -webkit-transform: translateX(5vw);
+  -ms-transform: translateX(5vw);
+  transform: translateX(5vw);
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -83,9 +106,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(5vw);
-  -ms-transform: translateX(5vw);
-  transform: translateX(5vw);
+  -webkit-transform: translateX(0vw);
+  -ms-transform: translateX(0vw);
+  transform: translateX(0vw);
 }
 
 /* Rounded sliders */
@@ -95,4 +118,201 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+input#total {
+  position: absolute;
+  right: 10px;
+  background-color: #222;
+  border: none;
+  width: 20px;
+  height: 38px;
+  padding: 0;
+  text-align: center;
+  line-height: 38px;
+  font-family: 'Josefin Sans';
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+#submitTour button {
+  background-color: #222;
+  border: none;
+  padding: 0;
+  width: 100%;
+  line-height: 38px;
+  color: #fff;
+  font-family: 'Josefin Sans';
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* SVG
+----------------------------------------------- */
+
+.cls-1,.cls-2,.cls-3,.cls-4 {
+  fill: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.cls-5 {
+  fill: #545454;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.cls-1,.cls-2,.cls-3 {
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+}
+
+.cls-2 {
+  stroke-dasharray: 13.45 13.45;
+}
+
+.cls-3,.cls-4 {
+  stroke-linecap: round;
+}
+
+.cls-4 {
+  stroke: #545454;
+  stroke-linejoin: round;
+  stroke-width: 4.25px;
+  stroke-dasharray: 14.17 11.34;
+}
+
+/* topBar
+----------------------------------------------- */
+
+div#topBar {
+  display: flex;
+  align-items: stretch;
+  border-left: 3px solid #fff;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  height: 38px;
+}
+
+#player {
+  float: left;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  line-height: 38px;
+}
+
+input#name {
+  font-family: 'Josefin Sans';
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  line-height: 43px;
+  background-color: #222;
+  border: none;
+  padding: 0;
+  width: 120px;
+}
+
+button#toggle, button#clear {
+  display: none;
+  float: right;
+  border: none;
+  border-left: 3px solid #fff;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  background-color: #222;
+  color: #fff;
+}
+
+/* bottomBar
+----------------------------------------------- */
+
+div#bottomBar {
+  position: relative;
+  border-left: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  height: 38px;
+}
+
+/* Timer
+----------------------------------------------- */
+
+#timer {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  line-height: 38px;
+  text-align: center;
+}
+
+#startButton, #startButton:hover, #pauseButton, #pauseButton:hover, #clearButton, #clearButton:hover {
+	font-size: 15px;
+	vertical-align: middle;
+}
+
+#pauseButton, #clearButton {
+	display: none;
+}
+
+/* Player
+----------------------------------------------- */
+
+.change {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/* Footer
+----------------------------------------------- */
+
+footer {
+  position: fixed;
+  bottom: -200px;
+  left: 0px;
+  width: 100%;
+  height: 30%;
+  box-sizing: border-box;
+  border-top: 3px solid #fff;
+  background-color: #222;
+  text-align: center;
+  transition: bottom 0.5s ease;
+}
+
+#swiper {
+  display: block;
+  position: relative;
+  bottom: 35.2px;
+  margin-top: -5px;
+  font-size: 35px;
+}
+
+#swiper:before {
+  content: attr(data-before);
+  font-family: 'Material Icons';
+  font-size: 35px;
+}
+
+#chrono {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  border: 3px solid #fff;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+  line-height: 42px;
+}
+
+#chrono:before {
+  content: attr(data-before);
+  font-family: 'Material Icons';
+  font-size: 24px;
 }
