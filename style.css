@@ -189,6 +189,7 @@ input#total {
 
 div#topBar {
   display: flex;
+  display: none;
   align-items: stretch;
   border-left: 3px solid #fff;
   border-top: 3px solid #fff;
@@ -232,6 +233,7 @@ button#toggle, button#clear {
 ----------------------------------------------- */
 
 div#bottomBar {
+  display: none;
   position: relative;
   border-left: 3px solid #fff;
   border-bottom: 3px solid #fff;
