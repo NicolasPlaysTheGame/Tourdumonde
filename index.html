@@ -1,93 +1,471 @@
+<html lang="fr">
+
 <head>
-<title>Tour du monde</title>
-<link rel="stylesheet" href="style.css">
-<link href='https://fonts.googleapis.com/css?family=Young Serif' rel='stylesheet'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Tour du monde</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Young Serif' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Libre Baskerville' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined' rel='stylesheet'/>
+
+  <script src='https://code.jquery.com/jquery-2.0.3.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+
+      $('input:checkbox').change(function () {
+        var total = 0;
+        $('input:checkbox:checked').each(function(){
+          total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+        });
+        $("#total").val(total);
+      });
+
+      $("#sc-1").change(function() {
+        if (this.checked) {
+          $("#sp-1 .cls-3").css("stroke", "gold");
+          $("#sp-1 .cls-4").css("stroke", "gold");
+          $("#sp-1 .cls-5").css("fill", "gold");
+        } else {
+          $("#sp-1 .cls-3").css("stroke", "#fff");
+          $("#sp-1 .cls-4").css("stroke", "#545454");
+          $("#sp-1 .cls-5").css("fill", "#545454");
+        }
+      });
+      $("#sc-2").change(function() {
+        if (this.checked) {
+          $("#sp-2 .cls-3").css("stroke", "gold");
+          $("#sp-2 .cls-4").css("stroke", "gold");
+          $("#sp-2 .cls-5").css("fill", "gold");
+        } else {
+          $("#sp-2 .cls-3").css("stroke", "#fff");
+          $("#sp-2 .cls-4").css("stroke", "#545454");
+          $("#sp-2 .cls-5").css("fill", "#545454");
+        }
+      });
+      $("#sc-3").change(function() {
+        if (this.checked) {
+          $("#sp-3 .cls-3").css("stroke", "gold");
+          $("#sp-3 .cls-4").css("stroke", "gold");
+          $("#sp-3 .cls-5").css("fill", "gold");
+        } else {
+          $("#sp-3 .cls-3").css("stroke", "#fff");
+          $("#sp-3 .cls-4").css("stroke", "#545454");
+          $("#sp-3 .cls-5").css("fill", "#545454");
+        }
+      });
+      $("#sc-4").change(function() {
+        if (this.checked) {
+          $("#sp-4 .cls-3").css("stroke", "gold");
+          $("#sp-4 .cls-4").css("stroke", "gold");
+          $("#sp-4 .cls-5").css("fill", "gold");
+        } else {
+          $("#sp-4 .cls-3").css("stroke", "#fff");
+          $("#sp-4 .cls-4").css("stroke", "#545454");
+          $("#sp-4 .cls-5").css("fill", "#545454");
+        }
+      });
+      $("#sc-5").change(function() {
+        if (this.checked) {
+          $("#sp-5 .cls-3").css("stroke", "gold");
+          $("#sp-5 .cls-4").css("stroke", "gold");
+          $("#sp-5 .cls-5").css("fill", "gold");
+        } else {
+          $("#sp-5 .cls-3").css("stroke", "#fff");
+          $("#sp-5 .cls-4").css("stroke", "#545454");
+          $("#sp-5 .cls-5").css("fill", "#545454");
+        }
+      });
+      $("#sc-6").change(function() {
+        if (this.checked) {
+          $("#sp-6 .cls-3").css("stroke", "gold");
+          $("#sp-6 .cls-4").css("stroke", "gold");
+          $("#sp-6 .cls-5").css("fill", "gold");
+        } else {
+          $("#sp-6 .cls-3").css("stroke", "#fff");
+          $("#sp-6 .cls-4").css("stroke", "#545454");
+          $("#sp-6 .cls-5").css("fill", "#545454");
+        }
+      });
+      $("#sc-7").change(function() {
+        if (this.checked) {
+          $("#sp-7 .cls-3").css("stroke", "gold");
+          $("#sp-7 .cls-4").css("stroke", "gold");
+          $("#sp-7 .cls-5").css("fill", "gold");
+        } else {
+          $("#sp-7 .cls-3").css("stroke", "#fff");
+          $("#sp-7 .cls-4").css("stroke", "#545454");
+          $("#sp-7 .cls-5").css("fill", "#545454");
+        }
+      });
+      $("#sc-8").change(function() {
+        if (this.checked) {
+          $("#sp-8 .cls-3").css("stroke", "gold");
+          $("#sp-8 .cls-4").css("stroke", "gold");
+          $("#sp-8 .cls-5").css("fill", "gold");
+        } else {
+          $("#sp-8 .cls-3").css("stroke", "#fff");
+          $("#sp-8 .cls-4").css("stroke", "#545454");
+          $("#sp-8 .cls-5").css("fill", "#545454");
+        }
+      });
+      $("#sc-9").change(function() {
+        if (this.checked) {
+          $("#sp-9 .cls-3").css("stroke", "gold");
+          $("#sp-9 .cls-4").css("stroke", "gold");
+          $("#sp-9 .cls-5").css("fill", "gold");
+        } else {
+          $("#sp-9 .cls-3").css("stroke", "#fff");
+          $("#sp-9 .cls-4").css("stroke", "#545454");
+          $("#sp-9 .cls-5").css("fill", "#545454");
+        }
+      });
+
+      $('#player').on('click', function() {
+        $('#player').toggleClass('change');
+        if ($('#name').val() === "Romain") {
+          $('#name').val('Nicolas');
+        } else {
+          $('#name').val('Romain');
+        }
+      });
+
+      $('#swiper').ready(function(){
+        var div = $('#swiper');
+        div.attr('data-before','swipe_up');
+        div.animate({marginTop: '-5px', opacity: '0.4'}, 600);
+        div.animate({marginTop: '-20px', opacity: '1'}, 600);
+        div.animate({marginTop: '-5px', opacity: '0.4'}, 600);
+        div.animate({marginTop: '-20px', opacity: '1'}, 600);
+        div.animate({marginTop: '-5px', opacity: '0'}, 600);
+        setTimeout(function() { 
+          div.attr('data-before','expand_less');
+          div.animate({opacity: '1'}, "slow");
+        }, 3000);
+      });
+
+      $('#chrono').attr('data-before','timer');
+      $('#chrono').on('click', function () {
+        //do something with the callback
+        if ($('#chrono').attr('data-before') == 'timer') {
+          $(this).attr('data-before','timer_off');
+          $('#timer').css('display', 'block');
+          $('#toggle').css('display', 'block');
+          $('#clear').css('display', 'block');
+        } else {
+          $(this).attr('data-before','timer');
+          $('#timer').css('display', 'none');
+          $('#toggle').css('display', 'none');
+          $('#clear').css('display', 'none');
+        }
+      });
+
+    });
+  </script>
+
 </head>
+
 <body>
+
   <header>
-    <p id="title">Tour du monde</p>
-    <p>Parc du château de Vanderhaeghen</p>
-    <p>South Court</p>
-    <br>
-    <p>Romain vs. Nico</p>
+    <p class="title" style="padding-right: 8.5px;">Tour du m</p>
+    <svg id="Layer_1" style="width: 22px; height: 22px; position: absolute; top: 19px; left: 241px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.7 56.7">
+      <style type="text/css">
+        .st0{fill:#fff;stroke:#222;stroke-width:1.113;stroke-miterlimit:10;}
+        .st1{fill:none;stroke:#222;stroke-width:1.113;stroke-miterlimit:10;}
+      </style>
+      <circle class="st0" cx="28.3" cy="28.4" r="27.8"/>
+      <path class="st1" d="M1.3,21.9c0.8,1.4,1.6,1.9,2.1,2C8.1,25.1,12.2,10.4,24.8,4c3.8-2,7.2-2.5,9.4-2.8"/>
+      <path class="st1" d="M1.5,35.7c1.6-1.7,3.9-3.9,7.2-6.3C17.5,23,26,21,32.3,19.6c5.1-1.2,12.6-2.4,21.7-2"/>
+      <path class="st1" d="M7.7,9.8c-1.5,3-5.2,11.9-2.2,21.7C9.3,44.4,22.7,53.7,39.1,54"/>
+      <path class="st1" d="M8.7,48c-1.9-5.3-2-8.7-1-9.9c6.1-7.9,33.4,9,45.8-2.1c1.2-1.1,1.9-2.2,2.2-2.7"/>
+    </svg>
+    <p class="title" style="padding-left: 8.5px;">nde</p>
   </header>
+
 <main>
-  <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 441.67 622.67"><defs><style>.cls-1,.cls-2,.cls-3,.cls-4{fill:none;}.cls-1,.cls-2,.cls-3{stroke:#fff;stroke-miterlimit:10;stroke-width:4px;}.cls-2{stroke-dasharray:13.45 13.45;}.cls-3,.cls-4{stroke-linecap:round;}.cls-4{stroke:#b2b2b2;stroke-linejoin:round;stroke-width:4.25px;stroke-dasharray:14.17 11.34;}.cls-5{fill:#b2b2b2;}</style></defs><title>Basket court</title><rect class="cls-1" x="-74.71" y="105.79" width="617" height="436" transform="translate(-102.96 545.13) rotate(-90)"/><path class="cls-1" d="M221.79,255a68.75,68.75,0,0,1,0,137.5" transform="translate(-12.96 -12.46)"/><path class="cls-1" d="M221.79,392.54a69.55,69.55,0,0,1-7.08-.36" transform="translate(-12.96 -12.46)"/><path class="cls-2" d="M201.55,389.51a68.77,68.77,0,0,1,6.54-133.1" transform="translate(-12.96 -12.46)"/><path class="cls-1" d="M214.72,255.4a69.55,69.55,0,0,1,7.08-.36" transform="translate(-12.96 -12.46)"/><polyline class="cls-1" points="2.83 242.59 208.84 242.59 208.84 380.08 2.83 380.08"/><polyline class="cls-1" points="2.83 213.54 208.84 213.54 208.84 409.13 2.83 409.13"/><path class="cls-1" d="M15.79,49c151.74,0,274.75,123,274.75,274.75s-123,274.75-274.75,274.75" transform="translate(-12.96 -12.46)"/><line class="cls-1" x1="11.83" y1="336.08" x2="11.83" y2="286.58"/><circle class="cls-1" cx="22.58" cy="311.33" r="10.75"/><line class="cls-3" x1="12.66" y1="184.12" x2="32.51" y2="203.96"/><line class="cls-3" x1="12.66" y1="203.96" x2="32.51" y2="184.12"/><line class="cls-3" x1="198.91" y1="184.12" x2="218.76" y2="203.96"/><line class="cls-3" x1="198.91" y1="203.96" x2="218.76" y2="184.12"/><line class="cls-3" x1="105.79" y1="184.12" x2="125.63" y2="203.96"/><line class="cls-3" x1="105.79" y1="203.96" x2="125.63" y2="184.12"/><line class="cls-3" x1="151.04" y1="301.41" x2="170.88" y2="321.26"/><line class="cls-3" x1="151.04" y1="321.26" x2="170.88" y2="301.41"/><line class="cls-3" x1="219.04" y1="301.41" x2="238.88" y2="321.26"/><line class="cls-3" x1="219.04" y1="321.26" x2="238.88" y2="301.41"/><line class="cls-3" x1="287.04" y1="301.41" x2="306.88" y2="321.26"/><line class="cls-3" x1="287.04" y1="321.26" x2="306.88" y2="301.41"/><line class="cls-3" x1="12.66" y1="419.12" x2="32.51" y2="438.96"/><line class="cls-3" x1="12.66" y1="438.96" x2="32.51" y2="419.12"/><line class="cls-3" x1="198.91" y1="419.12" x2="218.76" y2="438.96"/><line class="cls-3" x1="198.91" y1="438.96" x2="218.76" y2="419.12"/><line class="cls-3" x1="105.79" y1="419.12" x2="125.63" y2="438.96"/><line class="cls-3" x1="105.79" y1="438.96" x2="125.63" y2="419.12"/><path class="cls-4" d="M335,55S160.46,53.61,64.53,170.16" transform="translate(-12.96 -12.46)"/><polygon class="cls-5" points="46.5 150.53 44.04 167.31 59.8 161.05 46.5 150.53"/><path class="cls-4" d="M335,122.46S239.87,97.33,161.59,175" transform="translate(-12.96 -12.46)"/><polygon class="cls-5" points="144.34 154.93 140.21 171.38 156.52 166.73 144.34 154.93"/><path class="cls-4" d="M339.63,188.91s-23.17-7.82-62.61-2.09" transform="translate(-12.96 -12.46)"/><polygon class="cls-5" points="265.13 165.67 252.04 176.45 267.92 182.4 265.13 165.67"/><path class="cls-4" d="M341,257.35s-37.84,2.3-68,33.47" transform="translate(-12.96 -12.46)"/><polygon class="cls-5" points="255.5 270.98 252.04 287.58 268.15 282.28 255.5 270.98"/><path class="cls-4" d="M346.8,328s-7.5,42.63-85.43,89.84" transform="translate(-12.96 -12.46)"/><polygon class="cls-5" points="246.16 396.74 237.88 411.54 254.84 411.32 246.16 396.74"/><path class="cls-4" d="M346.43,392.54s-52.74,116.52-181.83,76.4" transform="translate(-12.96 -12.46)"/><polygon class="cls-5" points="156.7 449.16 140.09 452.54 151.32 465.25 156.7 449.16"/><path class="cls-4" d="M341,458.68s-121,151-266.11,20.66" transform="translate(-12.96 -12.46)"/><polygon class="cls-5" points="69.58 462.29 53.04 458.54 58.06 474.74 69.58 462.29"/><path class="cls-4" d="M339.63,527.12s-188.53,40.36-165.17-171" transform="translate(-12.96 -12.46)"/><polygon class="cls-5" points="169.68 347.14 163.04 331.54 152.85 345.09 169.68 347.14"/><path class="cls-4" d="M341,592.57S273.2,540.33,307.21,361" transform="translate(-12.96 -12.46)"/><polygon class="cls-5" points="302.15 352.58 296.64 336.55 285.5 349.34 302.15 352.58"/></svg>
-  <table>
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-      </td>
-    </tr>
-  </table>
+
+  <div style="position: absolute; left: -7.5%;">
+    <span class="material-icons" style="font-size: 20px;">place</span>
+    <p id="location">Parc du château de Vanderhaeghen</p>
+  </div>
+
+  <div id="topBar">
+    <div class="input-container" style="flex-grow: 20; height: 38px;">
+      <span class="material-icons" id="player">people_alt</span>
+      <input id="name" value="Romain">
+    </div>
+    <button id="toggle" style="flex-grow: 1; height: 38px;"><span class="material-icons">play_arrow</span></button>
+    <button id="clear" style="flex-grow: 1; height: 38px;"><span class="material-icons">replay</span></button>
+  </div>
+
+  <div id="content">
+
+    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="3 0 441.67 622.67">
+      <path class="cls-1" d="M221.79,255a68.75,68.75,0,0,1,0,137.5" transform="translate(-12.96 -12.46)"/>
+      <path class="cls-1" d="M221.79,392.54a69.55,69.55,0,0,1-7.08-.36" transform="translate(-12.96 -12.46)"/>
+      <path class="cls-2" d="M201.55,389.51a68.77,68.77,0,0,1,6.54-133.1" transform="translate(-12.96 -12.46)"/>
+      <path class="cls-1" d="M214.72,255.4a69.55,69.55,0,0,1,7.08-.36" transform="translate(-12.96 -12.46)"/>
+      <polyline class="cls-1" points="2.83 242.59 208.84 242.59 208.84 380.08 2.83 380.08"/>
+      <polyline class="cls-1" points="2.83 213.54 208.84 213.54 208.84 409.13 2.83 409.13"/>
+      <path class="cls-1" d="M15.79,49c151.74,0,274.75,123,274.75,274.75s-123,274.75-274.75,274.75" transform="translate(-12.96 -12.46)"/>
+      <line class="cls-1" x1="11.83" y1="336.08" x2="11.83" y2="286.58"/>
+      <circle class="cls-1" cx="22.58" cy="311.33" r="10.75"/>
+      <g id="sp-1">
+        <line class="cls-3" x1="12.66" y1="184.12" x2="32.51" y2="203.96"/>
+        <line class="cls-3" x1="12.66" y1="203.96" x2="32.51" y2="184.12"/>
+        <path class="cls-4" d="M335,55S160.46,53.61,64.53,170.16" transform="translate(-12.96 -12.46)"/>
+        <polygon class="cls-5" points="46.5 150.53 44.04 167.31 59.8 161.05 46.5 150.53"/>
+      </g>
+      <g id="sp-2">
+        <line class="cls-3" x1="105.79" y1="184.12" x2="125.63" y2="203.96"/>
+        <line class="cls-3" x1="105.79" y1="203.96" x2="125.63" y2="184.12"/>
+        <path class="cls-4" d="M335,122.46S239.87,97.33,161.59,175" transform="translate(-12.96 -12.46)"/>
+        <polygon class="cls-5" points="144.34 154.93 140.21 171.38 156.52 166.73 144.34 154.93"/>
+      </g>
+      <g id="sp-3">
+        <line class="cls-3" x1="198.91" y1="184.12" x2="218.76" y2="203.96"/>
+        <line class="cls-3" x1="198.91" y1="203.96" x2="218.76" y2="184.12"/>
+        <path class="cls-4" d="M339.63,188.91s-23.17-7.82-62.61-2.09" transform="translate(-12.96 -12.46)"/>
+        <polygon class="cls-5" points="265.13 165.67 252.04 176.45 267.92 182.4 265.13 165.67"/>
+      </g>
+      <g id="sp-4">
+        <line class="cls-3" x1="219.04" y1="301.41" x2="238.88" y2="321.26"/>
+        <line class="cls-3" x1="219.04" y1="321.26" x2="238.88" y2="301.41"/>
+        <path class="cls-4" d="M341,257.35s-37.84,2.3-68,33.47" transform="translate(-12.96 -12.46)"/>
+        <polygon class="cls-5" points="255.5 270.98 252.04 287.58 268.15 282.28 255.5 270.98"/>
+      </g>
+      <g id="sp-5">
+        <line class="cls-3" x1="198.91" y1="419.12" x2="218.76" y2="438.96"/>
+        <line class="cls-3" x1="198.91" y1="438.96" x2="218.76" y2="419.12"/>
+        <path class="cls-4" d="M346.8,328s-7.5,42.63-85.43,89.84" transform="translate(-12.96 -12.46)"/>
+        <polygon class="cls-5" points="246.16 396.74 237.88 411.54 254.84 411.32 246.16 396.74"/>
+      </g>
+      <g id="sp-6">
+        <line class="cls-3" x1="105.79" y1="419.12" x2="125.63" y2="438.96"/>
+        <line class="cls-3" x1="105.79" y1="438.96" x2="125.63" y2="419.12"/>
+        <path class="cls-4" d="M346.43,392.54s-52.74,116.52-181.83,76.4" transform="translate(-12.96 -12.46)"/>
+        <polygon class="cls-5" points="156.7 449.16 140.09 452.54 151.32 465.25 156.7 449.16"/>
+      </g>
+      <g id="sp-7">
+        <line class="cls-3" x1="12.66" y1="419.12" x2="32.51" y2="438.96"/>
+        <line class="cls-3" x1="12.66" y1="438.96" x2="32.51" y2="419.12"/>
+        <path class="cls-4" d="M341,458.68s-121,151-266.11,20.66" transform="translate(-12.96 -12.46)"/>
+        <polygon class="cls-5" points="69.58 462.29 53.04 458.54 58.06 474.74 69.58 462.29"/>
+      </g>
+      <g id="sp-8">
+        <line class="cls-3" x1="151.04" y1="301.41" x2="170.88" y2="321.26"/>
+        <line class="cls-3" x1="151.04" y1="321.26" x2="170.88" y2="301.41"/>
+        <path class="cls-4" d="M339.63,527.12s-188.53,40.36-165.17-171" transform="translate(-12.96 -12.46)"/>
+        <polygon class="cls-5" points="169.68 347.14 163.04 331.54 152.85 345.09 169.68 347.14"/>
+      </g>
+      <g id="sp-9">
+        <line class="cls-3" x1="287.04" y1="301.41" x2="306.88" y2="321.26"/>
+        <line class="cls-3" x1="287.04" y1="321.26" x2="306.88" y2="301.41"/>
+        <path class="cls-4" d="M341,592.57S273.2,540.33,307.21,361" transform="translate(-12.96 -12.46)"/>
+        <polygon class="cls-5" points="302.15 352.58 296.64 336.55 285.5 349.34 302.15 352.58"/>
+      </g>
+    </svg>
+
+    <form id="shootList">
+      <label class="switch">
+        <input id="sc-1" type="checkbox" value="1">
+        <span class="slider round"></span>
+      </label>
+      <label class="switch">
+        <input id="sc-2" type="checkbox" value="1">
+        <span class="slider round"></span>
+      </label>
+      <label class="switch">
+        <input id="sc-3" type="checkbox" value="1">
+        <span class="slider round"></span>
+      </label>
+      <label class="switch">
+        <input id="sc-4" type="checkbox" value="1">
+        <span class="slider round"></span>
+      </label>
+      <label class="switch">
+        <input id="sc-5" type="checkbox" value="1">
+        <span class="slider round"></span>
+      </label>
+      <label class="switch">
+        <input id="sc-6" type="checkbox" value="1">
+        <span class="slider round"></span>
+      </label>
+      <label class="switch">
+        <input id="sc-7" type="checkbox" value="1">
+        <span class="slider round"></span>
+      </label>
+      <label class="switch">
+        <input id="sc-8" type="checkbox" value="1">
+        <span class="slider round"></span>
+      </label>
+      <label class="switch">
+        <input id="sc-9" type="checkbox" value="1">
+        <span class="slider round"></span>
+      </label>
+    </form>
+
+    <time id="timer">0:00:00.00</time>
+
+  </div>
+
+  <div id="bottomBar">
+    <input id="total" value="0">
+    <div id="submitTour">
+      <button type="submit" form="shootList" value="Submit">Valider</button>
+    </div>
+  </div>
+
 </main>
+
 <footer>
+  <span id="chrono" style="display: none;"></span>
+  <span id="swiper"></span>
 </footer>
+
+<script type="text/javascript">
+var myHeader = document.getElementsByTagName('header')[0];
+var myFooter = document.getElementsByTagName('footer')[0];
+var myMain = document.getElementsByTagName('main')[0];
+
+// create a simple instance
+// by default, it only adds horizontal recognizers
+var mc = new Hammer(document);
+
+// let the pan gesture support all directions.
+// this will block the vertical scrolling on a touch-device while on the element
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+// listen to events...
+mc.on("panup pandown tap press", function(ev) {
+  if (ev.type == 'panup') {
+    myFooter.style.bottom = "0";
+    myHeader.style.opacity = "0.3";
+    myMain.style.opacity = "0.3";
+    document.getElementById('swiper').style.transform = "rotate(180deg)";
+  } else {
+    myFooter.style.bottom = "-200px";
+    myHeader.style.opacity = "1";
+    myMain.style.opacity = "1";
+    document.getElementById('swiper').style.transform = "rotate(0deg)";
+  }
+});
+</script>
+
+<script type="text/javascript">
+(function timer() {
+  "use strict";
+
+	//declare
+	var output = document.getElementById("timer");
+	var toggle = document.getElementById("toggle");
+	var clear = document.getElementById("clear");
+	var running = false;
+	var paused = false;
+	var timer;
+
+	// timer start time
+	var then;
+	// pause duration
+	var delay;
+	// pause start time
+	var delayThen;
+
+	// start timer
+	var start = function () {
+		delay = 0;
+		running = true;
+		then = Date.now();
+		timer = setInterval(run, 51);
+		toggle.innerHTML = "<span>pause</span>";
+    toggle.classList.add("material-icons");
+	};
+
+	// parse time in ms for output
+	var parseTime = function (elapsed) {
+		// array of time multiples [hours, min, sec, decimal]
+		var d = [3600000, 60000, 1000, 10];
+		var time = [];
+		var i = 0;
+
+		while (i < d.length) {
+			var t = Math.floor(elapsed / d[i]);
+
+			// remove parsed time for next iteration
+			elapsed -= t * d[i];
+
+			// add '0' prefix to m,s,d when needed
+			t = i > 0 && t < 10 ? "0" + t : t;
+			time.push(t);
+			i++;
+		}
+
+		return time;
+	};
+
+	// run
+	var run = function () {
+		// get output array and print
+		var time = parseTime(Date.now() - then - delay);
+		output.innerHTML = time[0] + ":" + time[1] + ":" + time[2] + "." + time[3];
+	};
+
+	// stop
+	var stop = function () {
+		paused = true;
+		delayThen = Date.now();
+		toggle.innerHTML = "<span>play_arrow</span>";
+    toggle.classList.add("material-icons");
+		clear.dataset.state = "visible";
+		clearInterval(timer);
+
+		// call one last time to print exact time
+		run();
+	};
+
+	// resume
+	var resume = function () {
+		paused = false;
+		delay += Date.now() - delayThen;
+		timer = setInterval(run, 51);
+		toggle.innerHTML = "<span>pause</span>";
+    toggle.classList.add("material-icons");
+		clear.dataset.state = "";
+	};
+
+	// clear
+	var reset = function () {
+		running = false;
+		paused = false;
+		toggle.innerHTML = "<span>play_arrow</span>";
+    toggle.classList.add("material-icons");
+		output.innerHTML = "0:00:00.00";
+		clear.dataset.state = "";
+	};
+
+	// evaluate and route
+	var router = function () {
+		if (!running) start();
+		else if (paused) resume();
+		else stop();
+	};
+
+	toggle.addEventListener("click", router);
+	clear.addEventListener("click", reset);
+})();
+</script>
+
 </body>
+
+</html>
