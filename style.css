@@ -14,6 +14,9 @@ header {
 
 p {
   margin: 0;
+  font-family: 'Impact';
+  font-size: 25px;
+  text-align: center;
 }
 
 p.title {
@@ -35,6 +38,8 @@ p#location {
   margin-top: 2px;
   writing-mode: vertical-rl;
   line-height: 18px;
+  font-family: 'Josefin Sans';
+  font-weight: bold;
   font-size: 11px;
 }
 
@@ -79,7 +84,6 @@ form#shootList {
 
 .slider {
   position: absolute;
-  cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
@@ -87,6 +91,7 @@ form#shootList {
   background-color: #545454;
   -webkit-transition: .4s;
   transition: .4s;
+  cursor: pointer;
 }
 
 .slider:before {
@@ -106,7 +111,11 @@ form#shootList {
 }
 
 input:checked + .slider {
-  background-color: gold;
+  background-color: #fffcec;
+  box-shadow:
+          0 0 15px rgba(255, 215, 0, .5),
+          0 0 45px rgba(255, 215, 0, .5),
+          0 0 105px rgba(255, 215, 0, .5);
 }
 
 input:focus + .slider {
@@ -128,20 +137,28 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-input#total {
-  position: absolute;
-  right: 10px;
-  background-color: #222;
-  border: none;
-  width: 20px;
-  height: 38px;
-  padding: 0;
-  text-align: center;
-  line-height: 38px;
-  font-family: 'Josefin Sans';
-  font-size: 20px;
+div#total {
+  position: relative;
+  width: 12px;
+  height: 19px;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  padding: 3px;
+  line-height: 23px;
+  font-family: "Digital Dismay";
+  font-size: 30px;
   font-weight: bold;
-  color: white;
+  color: #fffcec;
+  text-shadow:
+          0 0 15px rgba(255, 215, 0, 1),
+          0 0 15px rgba(255, 215, 0, 1),
+          0 0 45px rgba(255, 215, 0, 1),
+          0 0 105px rgba(255, 215, 0, 1);
+  cursor: default;
+}
+
+#submitTour {
+  display: none;
 }
 
 #submitTour button {
@@ -152,7 +169,7 @@ input#total {
   line-height: 38px;
   color: #fff;
   font-family: 'Josefin Sans';
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -197,7 +214,6 @@ input#total {
 
 div#topBar {
   display: flex;
-  display: none;
   align-items: stretch;
   border-left: 3px solid #fff;
   border-top: 3px solid #fff;
@@ -205,28 +221,46 @@ div#topBar {
   height: 38px;
 }
 
-#player {
+p#player {
   float: left;
-  width: 38px;
+  width: 55px;
   height: 38px;
   text-align: center;
   line-height: 38px;
+  user-select: none;
+  cursor: pointer;
 }
 
-input#name {
-  font-family: 'Josefin Sans';
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  line-height: 43px;
-  background-color: #222;
+div#name {
+  float: left;
   border: none;
   padding: 0;
-  width: 120px;
+  line-height: 36px;
+  font-family: 'F60s Scoreboard Regular';
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff4a1c;
+  text-shadow:
+        0 0 5px rgba(255, 0, 0, 1),
+        0 0 10px rgba(255, 0, 0, 1),
+        0 0 15px rgba(255, 0, 0, 1),
+        0 0 25px rgba(255, 0, 0, 1),
+        0 0 45px rgba(255, 0, 0, 1),
+        0 0 65px rgba(255, 0, 0, 1),
+        0 0 105px rgba(255, 0, 0, 1),
+        0 0 115px rgba(255, 0, 0, 1);
+}
+
+div#name:before {
+  display: block;
+  float: left;
+  padding-right: 3px;
+  content: '\2BC8';
+  line-height: 35px;
+  font-size: 15px;
 }
 
 button#toggle, button#clear {
-  display: none;
   float: right;
   border: none;
   border-left: 3px solid #fff;
@@ -241,26 +275,55 @@ button#toggle, button#clear {
 ----------------------------------------------- */
 
 div#bottomBar {
-  display: none;
+  display: flex;
+  justify-content: center;
   position: relative;
-  border-left: 3px solid #fff;
-  border-bottom: 3px solid #fff;
-  border-right: 3px solid #fff;
-  height: 38px;
+  top: 30px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  padding-bottom: 5px;
 }
 
 /* Timer
 ----------------------------------------------- */
 
 #timer {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  display: block;
+  position: relative;
+  width: 90px;
+  height: 19px;
   z-index: 1;
-  line-height: 38px;
-  text-align: center;
+  border: 2px solid #fff;
+  padding: 3px;
+  line-height: 23px;
+  font-family: "Digital Dismay";
+  font-size: 30px;
+  font-weight: bold;
+  color: #fffcec;
+  text-shadow:
+          0 0 15px rgba(255, 215, 0, 1),
+          0 0 45px rgba(255, 215, 0, 1),
+          0 0 105px rgba(255, 215, 0, 1);
+}
+
+.ms {
+  display: block;
+  float: right;
+  height: 14px;
+  border: 2px solid #fff;
+  padding: 1px;
+  line-height: 15px;
+  font-size: 18px;
+  color: #ff4a1c;
+  text-shadow:
+        0 0 5px rgba(255, 0, 0, 1),
+        0 0 10px rgba(255, 0, 0, 1),
+        0 0 15px rgba(255, 0, 0, 1),
+        0 0 25px rgba(255, 0, 0, 1),
+        0 0 45px rgba(255, 0, 0, 1),
+        0 0 65px rgba(255, 0, 0, 1),
+        0 0 105px rgba(255, 0, 0, 1),
+        0 0 115px rgba(255, 0, 0, 1);
 }
 
 #startButton, #startButton:hover, #pauseButton, #pauseButton:hover, #clearButton, #clearButton:hover {
@@ -272,12 +335,30 @@ div#bottomBar {
 	display: none;
 }
 
-/* Player
------------------------------------------------ */
+.run {
+  color: #fffcec;
+  text-shadow:
+          0 0 15px rgba(255, 215, 0, 1),
+          0 0 15px rgba(255, 215, 0, 1),
+          0 0 45px rgba(255, 215, 0, 1),
+          0 0 105px rgba(255, 215, 0, 1);
+  user-select: none;
+  cursor: pointer;
+}
 
-.change {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+.pause {
+  color: #ff4a1c;
+  text-shadow:
+        0 0 5px rgba(255, 0, 0, 1),
+        0 0 10px rgba(255, 0, 0, 1),
+        0 0 15px rgba(255, 0, 0, 1),
+        0 0 25px rgba(255, 0, 0, 1),
+        0 0 45px rgba(255, 0, 0, 1),
+        0 0 65px rgba(255, 0, 0, 1),
+        0 0 105px rgba(255, 0, 0, 1),
+        0 0 115px rgba(255, 0, 0, 1);
+  user-select: none;
+  cursor: pointer;
 }
 
 /* Footer
@@ -292,15 +373,15 @@ footer {
   box-sizing: border-box;
   border-top: 3px solid #fff;
   background-color: #222;
-  text-align: center;
   transition: bottom 0.5s ease;
 }
 
 #swiper {
   display: block;
   position: relative;
-  bottom: 35.2px;
+  bottom: 73.2px;
   margin-top: -5px;
+  text-align: center;
   font-size: 35px;
 }
 
@@ -314,9 +395,6 @@ footer {
   display: inline-block;
   width: 38px;
   height: 38px;
-  border: 3px solid #fff;
-  border-bottom: none;
-  border-radius: 20px 20px 0 0;
   text-align: center;
   line-height: 42px;
 }
@@ -325,4 +403,8 @@ footer {
   content: attr(data-before);
   font-family: 'Material Icons';
   font-size: 24px;
+}
+
+.play {
+  opacity: 0;
 }
