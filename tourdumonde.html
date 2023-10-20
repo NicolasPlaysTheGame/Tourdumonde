@@ -1,0 +1,582 @@
+﻿<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Tour du monde</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://db.onlinewebfonts.com/c/582cac299faac1ab8d378a6488ba2ced?family=Digital+Dismay" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/4eb46f6a58fc4388ed414b718e50ed2b?family=F60s+Scoreboard+Regular" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/1abd8c1a58598974d8415573764ba76a?family=Ozone" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    
+    <script src='https://code.jquery.com/jquery-2.0.3.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script type="text/javascript">
+  $(document).ready(function () {
+    
+    $('input:checkbox').change(function () {
+      var total = 0;
+      $('input:checkbox:checked').each(function(){
+        total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+      });
+      $("#total").text(total);
+    });
+    
+    $("#sc-1").change(function() {
+      if (this.checked) {
+        $("#sp-1 .st1").css("fill", "#fffcec");
+        $("#sp-1 .st1").css("filter", "drop-shadow(0px 0px 5px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 10px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 15px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 20px rgba(255, 215, 0, 1))");
+      } else {
+        $("#sp-1 .st1").css("fill", "#726000");
+        $("#sp-1 .st1").css("filter", "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0))");
+      }
+    });
+    $("#sc-2").change(function() {
+      if (this.checked) {
+        $("#sp-2 .st1").css("fill", "#fffcec");
+        $("#sp-2 .st1").css("filter", "drop-shadow(0px 0px 5px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 10px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 15px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 20px rgba(255, 215, 0, 1))");
+      } else {
+        $("#sp-2 .st1").css("fill", "#726000");
+        $("#sp-2 .st1").css("filter", "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0))");
+      }
+    });
+    $("#sc-3").change(function() {
+      if (this.checked) {
+        $("#sp-3 .st1").css("fill", "#fffcec");
+        $("#sp-3 .st1").css("filter", "drop-shadow(0px 0px 5px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 10px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 15px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 20px rgba(255, 215, 0, 1))");
+      } else {
+        $("#sp-3 .st1").css("fill", "#726000");
+        $("#sp-3 .st1").css("filter", "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0))");
+      }
+    });
+    $("#sc-4").change(function() {
+      if (this.checked) {
+        $("#sp-4 .st1").css("fill", "#fffcec");
+        $("#sp-4 .st1").css("filter", "drop-shadow(0px 0px 5px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 10px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 15px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 20px rgba(255, 215, 0, 1))");
+      } else {
+        $("#sp-4 .st1").css("fill", "#726000");
+        $("#sp-4 .st1").css("filter", "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0))");
+      }
+    });
+    $("#sc-5").change(function() {
+      if (this.checked) {
+        $("#sp-5 .st1").css("fill", "#fffcec");
+        $("#sp-5 .st1").css("filter", "drop-shadow(0px 0px 5px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 10px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 15px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 20px rgba(255, 215, 0, 1))");
+      } else {
+        $("#sp-5 .st1").css("fill", "#726000");
+        $("#sp-5 .st1").css("filter", "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0))");
+      }
+    });
+    $("#sc-6").change(function() {
+      if (this.checked) {
+        $("#sp-6 .st1").css("fill", "#fffcec");
+        $("#sp-6 .st1").css("filter", "drop-shadow(0px 0px 5px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 10px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 15px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 20px rgba(255, 215, 0, 1))");
+      } else {
+        $("#sp-6 .st1").css("fill", "#726000");
+        $("#sp-6 .st1").css("filter", "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0))");
+      }
+    });
+    $("#sc-7").change(function() {
+      if (this.checked) {
+        $("#sp-7 .st1").css("fill", "#fffcec");
+        $("#sp-7 .st1").css("filter", "drop-shadow(0px 0px 5px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 10px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 15px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 20px rgba(255, 215, 0, 1))");
+      } else {
+        $("#sp-7 .st1").css("fill", "#726000");
+        $("#sp-7 .st1").css("filter", "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0))");
+      }
+    });
+    $("#sc-8").change(function() {
+      if (this.checked) {
+        $("#sp-8 .st1").css("fill", "#fffcec");
+        $("#sp-8 .st1").css("filter", "drop-shadow(0px 0px 5px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 10px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 15px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 20px rgba(255, 215, 0, 1))");
+      } else {
+        $("#sp-8 .st1").css("fill", "#726000");
+        $("#sp-8 .st1").css("filter", "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0))");
+      }
+    });
+    $("#sc-9").change(function() {
+      if (this.checked) {
+        $("#sp-9 .st1").css("fill", "#fffcec");
+        $("#sp-9 .st1").css("filter", "drop-shadow(0px 0px 5px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 10px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 15px rgba(255, 215, 0, 1)) drop-shadow(0px 0px 20px rgba(255, 215, 0, 1))");
+      } else {
+        $("#sp-9 .st1").css("fill", "#726000");
+        $("#sp-9 .st1").css("filter", "drop-shadow(0px 0px 0px rgba(255, 0, 0, 0))");
+      }
+    });
+    
+    //Select player
+    var arr = [
+      'Romain',
+      'Nicolas',
+      'Guest',
+      'Cancel?'
+    ];
+    var cnt = 0;
+      
+    $('#select').on('click',function (e) {
+      $('#name').text(arr[cnt]);
+      cnt++;
+      if (cnt > 3) cnt = 0;
+    });
+
+    $('#select').mouseup(function () {
+      $('#player').removeClass('selected');
+    });
+    $('#select').mousedown(function () {
+      $('#player').addClass('selected');
+    });
+
+    //Timer on-off
+    $('#chrono').attr('data-before','timer');
+    $('#chrono').on('click', function () {
+      if ($('#chrono').attr('data-before') == 'timer') {
+        $(this).attr('data-before','timer_off');
+        $('#m-s').css('color', '#fffcec');
+        $('#m-s').css('text-shadow', '0 0 15px rgba(255, 215, 0, 1), 0 0 45px rgba(255, 215, 0, 1), 0 0 105px rgba(255, 215, 0, 1)');
+        $('#ms').css('color', '#ff4a1c');
+        $('#ms').css('text-shadow', '0 0 5px rgba(255, 0, 0, 1), 0 0 10px rgba(255, 0, 0, 1), 0 0 15px rgba(255, 0, 0, 1), 0 0 25px rgba(255, 0, 0, 1), 0 0 45px rgba(255, 0, 0, 1), 0 0 65px rgba(255, 0, 0, 1), 0 0 105px rgba(255, 0, 0, 1), 0 0 115px rgba(255, 0, 0, 1)');
+        $('#start').css('pointer-events', 'auto');
+        $('#pause').css('pointer-events', 'auto');
+        $('#restart').css('pointer-events', 'auto');
+        $('#timer-onoff').css('background-color', '#ff4a1c');
+        $('#timer-onoff').css('box-shadow', '0 0 5px rgba(255, 0, 0, 1), 0 0 10px rgba(255, 0, 0, 1), 0 0 15px rgba(255, 0, 0, 1), 0 0 25px rgba(255, 0, 0, 1), 0 0 45px rgba(255, 0, 0, 1), 0 0 65px rgba(255, 0, 0, 1), 0 0 105px rgba(255, 0, 0, 1), 0 0 115px rgba(255, 0, 0, 1)');
+      } else {
+        $(this).attr('data-before','timer');
+        $('#m-s').css('color', '#726000');
+        $('#m-s').css('text-shadow', 'none');
+        $('#ms').css('color', '#6f210d');
+        $('#ms').css('text-shadow', 'none');
+        $('#start').css('pointer-events', 'none');
+        $('#pause').css('pointer-events', 'none');
+        $('#restart').css('pointer-events', 'none');
+        $('#timer-onoff').css('background-color', '#6f210d');
+        $('#timer-onoff').css('box-shadow', 'none');
+      }
+    });
+
+    //Submit
+    $('#end').on('click', function () {
+      if ($('#name').text().match('Cancel?')) {
+        window.location.href = "index.html";
+      } else {
+        alert("Tour du monde terminé !\nDurée : "+$("#m-s").text()+":"+$("#ms").text()+"\nJoueur : "+$('#name').text()+"\nScore : "+$('#total').text()+" pts");
+      }
+    });
+
+  });
+  </script>
+
+  </head>
+
+  <body>
+
+    <canvas data-starfield="1000"></canvas>
+    
+    <header>
+      <p class="title">TOUR DU MONDE</p>
+    </header>
+    
+    <main>
+      <div id="topBar">
+        <div style="float: left; margin-right: 8px;">
+          <p id="player">PLYR</p>
+          <div id="name">&nbsp;&nbsp;---</div>
+        </div>
+        
+        <div style="float: left;">
+          <p>TIME</p>
+          <div id="timer"><span id="m-s">00:00</span><span id="ms">00</span></div>
+        </div>
+        
+        <div style="float: left;">
+          <p>PTS</p>
+          <div id="total">0</div>
+        </div>
+      </div>
+      
+      <div id="content">
+        
+        <svg id="field" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 441.7 622.7">
+          <style type="text/css">
+            .st0{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+            .st1{fill:#726000;}
+            .st2{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
+	          .st3{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;stroke-dasharray:13.45,13.45;}
+      	    .st4{fill:#FFFFFF;font-family:'Impact';font-size:30px;user-select: none;}
+          </style>
+          <g id="sp-1">
+            <circle class="st0" cx="19.8" cy="192.8" r="11.3"/>
+            <circle class="st1" cx="19.8" cy="192.8" r="6.8"/>
+          </g>
+          <g id="sp-2">
+            <circle class="st0" cx="112.9" cy="192.8" r="11.3"/>
+            <circle class="st1" cx="112.9" cy="192.8" r="6.9"/>
+          </g>
+          <g id="sp-3">
+            <circle class="st0" cx="206" cy="192.8" r="11.3"/>
+            <circle class="st1" cx="206" cy="192.8" r="6.9"/>
+          </g>
+          <g id="sp-4">
+            <circle class="st0" cx="226.2" cy="311.3" r="11.3"/>
+            <circle class="st1" cx="226.2" cy="311.3" r="6.9"/>
+          </g>
+          <g id="sp-5">
+            <circle class="st0" cx="206" cy="429" r="11.3"/>
+            <circle class="st1" cx="206" cy="429" r="6.9"/>
+          </g>
+          <g id="sp-6">
+            <circle class="st0" cx="112.9" cy="429" r="11.3"/>
+            <circle class="st1" cx="112.9" cy="429" r="6.9"/>
+          </g>
+          <g id="sp-7">
+            <circle class="st0" cx="19.8" cy="429" r="11.3"/>
+            <circle class="st1" cx="19.8" cy="429" r="6.9"/>
+          </g>
+          <g id="sp-8">
+            <circle class="st0" cx="158.2" cy="311.3" r="11.3"/>
+            <circle class="st1" cx="158.2" cy="311.3" r="6.9"/>
+          </g>
+          <g id="sp-9">
+            <circle class="st0" cx="294.2" cy="311.3" r="11.3"/>
+            <circle class="st1" cx="294.2" cy="311.3" r="6.8"/>
+          </g>
+          <g id="lines">
+            <path class="st2" d="M206,242.5c38,0,68.8,30.8,68.8,68.8S244,380,206,380"/>
+            <path class="st2" d="M206,380.1c-2.4,0-4.7-0.1-7.1-0.4"/>
+            <path class="st3" d="M185.8,377c-36.3-11.2-56.6-49.7-45.4-86c7.4-24,27.3-42.1,52-47.1"/>
+            <path class="st2" d="M199,242.9c2.4-0.2,4.7-0.4,7.1-0.4"/>
+            <polyline class="st2" points="0,242.6 206,242.6 206,380.1 0,380.1 	"/>
+            <polyline class="st2" points="0,213.5 206,213.5 206,409.1 0,409.1 	"/>
+            <path class="st2" d="M0,36.5c151.7,0,274.8,123,274.8,274.8S151.8,586,0,586"/>
+            <line class="st2" x1="9" y1="336.1" x2="9" y2="286.6"/>
+            <circle class="st2" cx="19.8" cy="311.3" r="10.8"/>
+          </g>
+          <g id="numbers">
+            <text transform="matrix(1 0 0 1 12.228 175.4524)" class="st4">1</text>
+            <text transform="matrix(1 0 0 1 105.5328 175.4523)" class="st4">2</text>
+            <text transform="matrix(1 0 0 1 197.985 175.4523)" class="st4">3</text>
+            <text transform="matrix(1 0 0 1 218.7076 293.9619)" class="st4">4</text>
+            <text transform="matrix(1 0 0 1 197.9849 470.6402)" class="st4">5</text>
+            <text transform="matrix(1 0 0 1 104.6922 470.6402)" class="st4">6</text>
+            <text transform="matrix(1 0 0 1 14.0671 470.6407)" class="st4">7</text>
+            <text transform="matrix(1 0 0 1 150.1799 293.9618)" class="st4">8</text>
+            <text transform="matrix(1 0 0 1 286.0775 293.9616)" class="st4">9</text>
+          </g>
+        </svg>
+
+        <div id="shootList">
+
+          <span class="material-icons">sports_basketball</span>
+
+          <form>
+            <div class="switch">
+              <input id="sc-1" type="checkbox" value="1">
+              <label></label>
+              <div class="btn">1</div>
+            </div>
+            <div class="switch">
+              <input id="sc-2" type="checkbox" value="1">
+              <label></label>
+              <div class="btn">2</div>
+            </div>
+            <div class="switch">
+              <input id="sc-3" type="checkbox" value="1">
+              <label></label>
+              <div class="btn">3</div>
+            </div>
+            <div class="switch">
+              <input id="sc-4" type="checkbox" value="1">
+              <label></label>
+              <div class="btn">4</div>
+            </div>
+            <div class="switch">
+              <input id="sc-5" type="checkbox" value="1">
+              <label></label>
+              <div class="btn">5</div>
+            </div>
+            <div class="switch">
+              <input id="sc-6" type="checkbox" value="1">
+              <label></label>
+              <div class="btn">6</div>
+            </div>
+            <div class="switch">
+              <input id="sc-7" type="checkbox" value="1">
+              <label></label>
+              <div class="btn">7</div>
+            </div>
+            <div class="switch">
+              <input id="sc-8" type="checkbox" value="1">
+              <label></label>
+              <div class="btn">8</div>
+            </div>
+            <div class="switch">
+              <input id="sc-9" type="checkbox" value="1">
+              <label></label>
+              <div class="btn">9</div>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+      
+      <div id="bottomBar">
+
+        <div id="foot-1">
+          <span>TIMER</span>
+          <div>
+            <button id="start"><span class="material-icons">play_arrow</span></button>
+            <button id="pause"><span class="material-icons">pause</span></button>
+            <button id="restart"><span class="material-icons">replay</span></button>
+            <span id="timer-onoff"></span>
+          </div>
+        </div>
+        
+        <div id="foot-3">
+          <span>OPTIONS</span>
+          <div>
+            <button id="select"><span class="material-icons">accessibility_new</span></button>
+            <div id="chrono">
+              <input type="checkbox">
+              <label><span class="material-icons">timer</span></label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    
+    </main>
+    
+    <footer>
+      
+      <div id="foot-2">
+        
+        <svg id="flame" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 48">
+          <style type="text/css">
+            .st6{fill:#d2000c; filter: drop-shadow(0 0 6px rgba(255, 0, 0, 1));}
+            .st7{fill:#fffcec; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 1));}
+          </style>
+          <g>
+            <path class="st6" d="M66.9,8.3c-0.2-0.2,0.8-1,1.7-2.6C69,5,69,4.7,69.4,4.2c0.4-0.5,0.9-0.8,1.4-1.1s1.3-0.8,1.3-0.7
+              c0.1,0.1-0.4,0.4-0.8,1c-0.1,0.2-0.2,0.4-0.5,1.2c-0.3,0.8-0.2,0.7-0.6,1.3c-0.2,0.3-0.4,0.6-1.3,1.3c-0.4,0.4-0.8,0.6-1.3,0.8
+              C67.5,8.2,67,8.4,66.9,8.3z"/>
+            <path class="st6" d="M86.7,7.5c-0.2-0.3,0.8-0.9,1-2.2c0-0.2,0.1-0.4,0.2-0.7c0.2-0.5,0.6-0.8,0.8-1c1.1-1,2.6-1.2,2.7-1.1
+              c0,0-0.1,0.1-0.3,0.3c-0.4,0.4-0.6,0.9-0.7,1.2c-0.2,0.6-0.1,0.6-0.2,1.2c0,0.1-0.2,0.9-0.9,1.5c-0.6,0.6-1.2,0.8-1.4,0.9
+              C87.6,7.5,86.9,7.7,86.7,7.5z"/>
+            <path class="st6" d="M41.3,19.7c-5.7,1.9-9.8,7.4-9.8,13.7c0,8,6.5,14.5,14.5,14.5c6.5,0,12-4.3,13.9-10.2c0.7-0.5,1.2-0.7,1.5-0.9
+              c0.3-0.2,1.4-0.7,2.8-1.1c1.1-0.3,1.9-0.4,3.1-0.6c3.2-0.4,3.3-0.1,4.4-0.6c1.1-0.5,2-1.1,2.6-1.5s1.1-0.9,1.8-1.5
+              c1.5-1.3,1.9-2,1.9-2.1s-0.6,0.3-1.5,0.7c-0.8,0.3-1.4,0.4-2.1,0.5c-1.2,0.2-2,0.3-2.9,0.1c-0.5-0.1-1.3-0.3-1.5-0.9
+              c-0.2-0.6,0.1-1.1,0.2-1.4c0.4-0.8,1.1-1.2,1.5-1.4c2.5-1.2,6-1.2,6.7-1.3c2.6,0,3,0.3,4.5-0.1c1.1-0.2,2.6-0.6,3.6-1.9
+              c0.8-1,1.1-2.2,1.1-2.3c0.2-0.8,0.2-1.2,0.6-1.8c0.5-0.8,1.1-1.1,1.1-1.2c-0.1-0.1-0.9,0.1-1.5,0.6c-0.7,0.6-0.6,1-1.1,1.6
+              c-0.9,1.1-2.8,1.6-3.6,0.9c-0.6-0.5-0.5-1.4-0.4-1.6c0.1-0.4,0.2-0.7,0.8-1.4c0.7-0.9,1.1-1.2,2.1-2.3c0.8-0.8,1.1-1.2,1.4-1.8
+              c0.4-0.8,0.7-1.6,0.8-1.8c0.3-0.9,0.2-1.2,0.5-1.8c0.4-0.7,0.9-1,0.9-1.1c-0.1-0.1-0.7,0.1-1.2,0.5c-0.4,0.3-0.4,0.5-0.8,0.9
+              c-0.3,0.3-1.1,1.2-2,1c-0.5-0.1-0.8-0.5-1-0.8c-0.7-0.2-0.7-1-0.7-1.7c0-0.9,0.3-1.8,0.8-2.5c0.2-0.3,0.4-0.3,0.8-0.7
+              c0.4-0.4,0.5-0.7,0.7-1c0.6-1.3,1-1.9,1.4-2.4c0.5-0.6,1-1,1.3-1.3c1.6-1.3,3.2-1.3,3.2-1.4c0-0.2-3.3-0.5-5.4,1.4
+              C86,2,85.8,2.2,85,2.9c-1.1,1-1.7,1.5-2.6,1.7c-0.7,0.1-0.9-0.1-1.4,0.2c-0.5,0.1-0.5,0.5-1.1,1.4c-0.6,1-1,1.8-1.9,2.2
+              c-0.3,0.1-1,0.5-1.7,0.3c-0.9-0.4-1.1-1.6-1.2-2c-0.2-1.4,0.3-2.6,0.7-3.4c0.5-0.9,0.8-1.2,0.7-1.3c-0.2-0.1-1.9,1.1-3.3,2.9
+              c-1,1.5-1,2.2-2.1,3.2c-0.7,0.7-1.3,0.8-2.4,1.3c-3,1.4-6.4,3-7.4,5.3C61.2,15,60.8,16,60,16.4c-0.2,0.1-0.6,0.3-1,0.1
+              c-0.8-0.3-1-1.9-0.6-3c0.3-0.6,0.7-1,1.2-1.4c1.3-1.1,2-0.8,2.9-1.8c0.6-0.6,0.3-0.8,1-1.7c1-1.4,2.1-1.8,2-1.9
+              c-0.1-0.2-1.7,0.1-3,1.1c-0.6,0.5-0.8,1-1.6,1.4c-0.6,0.3-1.1,0.4-1.8,0.5c-0.3,0.1-2.2,0.3-3.2,0.9c-1.4,0.9-1.6,1.8-3.4,3.9
+              c-1.2,1.3-2.5,2.7-3.3,2.3c-0.7-0.3-0.8-1.7-0.6-2.7c0.4-2.5,2.8-3.6,2.6-4c-0.3-0.5-3.6,0.2-5.2,2.6c-0.4,0.5-0.4,0.6-1.1,2
+              C44.1,16,42.7,17.9,41.3,19.7z"/>
+          </g>
+          <g>
+            <path class="st7" d="M58.5,33.9c0,0,0.3-0.1,0.6-0.2c0.4-0.1,0.5-0.2,0.9-0.3c0.7-0.2,0.7-0.2,1.1-0.2c0.5-0.1,0.9-0.1,1.2-0.1
+              c0.4,0,0.5,0,1.2,0.1c1,0.1,1.5,0.1,1.9,0.1c0.6-0.1,1.1-0.2,1.4-0.3c0.4-0.2,0.7-0.3,0.8-0.4c0.4-0.3,0.7-0.6,0.7-0.7
+              S68,32,67.6,32.1c-0.4,0-0.6,0-0.7,0c-0.2,0-0.4-0.1-0.6-0.3c-0.2-0.2-0.4-0.4-0.4-0.5s-0.1-0.3-0.1-0.8c0-0.3,0-0.7,0.2-1.2
+              c0.1-0.2,0.2-0.6,0.5-1.1c0.4-0.6,0.7-0.9,1.1-1.3c0.7-0.7,1.4-1,2.6-1.5c0.5-0.2,1.2-0.4,2.1-0.7c1.4-0.3,2.8-0.5,2.8-0.5
+              c0.6-0.1,1.4-0.1,2.1-0.5c0.4-0.2,0.5-0.4,0.6-0.6c0-0.1,0-0.2,0.1-0.8c0-0.6,0-0.6,0-0.7c0.1-0.5,0.3-0.9,0.5-1.1
+              c0.1-0.2,0.3-0.5,0.7-0.8s0.8-0.4,1.1-0.6c0.4-0.1,0.6-0.2,0.6-0.2c0-0.1-0.7-0.2-1.3-0.2c-0.2,0-0.6,0-1,0.2
+              c-0.5,0.2-0.9,0.5-1.1,0.6C77,19.9,77,20,76.6,20.4c-0.4,0.3-0.6,0.4-0.8,0.4c-0.1,0-0.4,0.1-0.7-0.1c-0.2-0.2-0.3-0.4-0.4-0.5
+              c0-0.1-0.1-0.3,0-0.9c0.1-0.5,0.2-0.9,0.3-1.2c0.2-0.5,0.4-0.8,0.5-1s0.4-0.6,0.8-1c0.4-0.4,0.8-0.6,1.2-0.8
+              c0.7-0.4,0.8-0.3,1.9-0.8c0.9-0.4,1.2-0.6,1.4-0.9c0.3-0.4,0.5-0.7,0.5-0.8c0.1-0.2,0.1-0.5,0.2-1c0,0,0.1-0.4,0.1-1.1
+              c0-0.2,0-0.3,0-0.3c-0.1,0-0.2,0.3-0.5,0.6c-0.3,0.3-0.6,0.5-1,0.7C79.5,12,79,12,78.4,12.1c-0.3,0-0.2,0-0.9,0
+              c-1.1,0.1-1.4,0.1-1.5,0.2c-0.4,0.1-0.6,0.2-0.9,0.4c-0.4,0.2-1,0.6-1.7,1.2c-0.6,0.6-0.5,0.6-1.2,1.3c-0.7,0.7-1.1,0.9-1.3,1
+              c-0.4,0.2-0.8,0.4-1.4,0.3c-0.5-0.1-0.8-0.4-0.8-0.5c-0.1-0.1-0.2-0.2-0.3-0.4s0-0.4,0-0.7c0.1-0.3,0.1-0.5,0.2-0.6
+              c0.1-0.3,0.3-0.5,0.4-0.7c0.2-0.3,0.3-0.5,0.5-0.6c0.1-0.1,0.2-0.1,0.2-0.1c0-0.1-0.4-0.1-0.6-0.1c-0.3,0-0.6,0-1,0.2
+              c-0.2,0.1-0.3,0.3-0.7,0.9c-0.7,1.1-0.9,1.3-1,1.4c-0.3,0.4-0.5,0.6-0.9,0.9c-0.3,0.2-0.4,0.2-0.8,0.4c-0.2,0.1-0.5,0.3-0.8,0.6
+              c-0.5,0.5-0.7,1.3-0.9,2c-0.1,0.3-0.1,0.5-0.3,0.7c-0.3,0.3-0.6,0.4-0.7,0.5c-0.3,0.1-0.9,0.1-1.1-0.2c-0.1-0.1-0.1-0.2-0.1-0.4
+              c0-0.5,0.1-0.9,0.3-1.1c0-0.1,0.2-0.4,0.5-0.9c0.3-0.4,0.4-0.5,0.4-0.5c-0.1-0.1-0.5,0-0.9,0.3c-0.3,0.2-0.5,0.5-0.7,0.7
+              c-0.3,0.3-0.4,0.5-0.5,0.7c-0.5,0.7-1.1,1.2-1.3,1.3c-0.7,0.5-1.4,0.7-1.8,0.8c-0.8,0.2-1.1,0.1-1.3,0c-0.4-0.2-0.6-0.5-0.6-0.6
+              c-0.1-0.1-0.2-0.3-0.2-1.1c0-0.7,0-1.1,0.1-1.5c0.1-0.3,0.3-0.6,0.6-1.1c0.3-0.5,0.5-0.7,0.7-1.3c0.1-0.3,0.2-0.6,0.1-0.6
+              c-0.1,0-0.2,0.3-0.6,0.7c-0.2,0.2-0.4,0.3-0.7,0.6c-1.5,1-1.5,1-1.7,1.2c-0.1,0.1-0.6,0.6-0.7,1.4c0,0.2,0,0.6,0,0.9
+              c0,0.4,0.1,0.6,0.1,0.8c0.1,0.9-0.9,1.8-0.9,1.8c-1.1-0.6-2.3-1-3.6-1.2c0,0,0.3-0.5,0.4-0.8c0.1-0.5-0.2-0.9-0.3-1.1
+              c-0.3-0.5-0.3-0.3-0.7-0.7c-0.3-0.4-0.7-0.8-0.8-1.4c0-0.1,0-0.3,0-0.6c0.1-0.3,0.2-0.4,0.2-0.5c-0.1-0.1-0.9,0.3-1.3,1.1
+              c-0.3,0.4-0.3,0.9-0.4,1.2c-0.1,0.4-0.1,0.6-0.1,0.8c-0.2,1.2-0.9,2-0.9,2c-6,0.8-10.7,6-10.7,12.3c0,6.9,5.6,12.5,12.5,12.5
+              C52.8,45.9,58.3,40.6,58.5,33.9z"/>
+            <path class="st7" d="M70.9,13.7c-0.1-0.1,0.4-0.5,0.6-1.3c0-0.2,0.1-0.2,0.1-0.4c0.1-0.3,0.3-0.5,0.5-0.7c0.6-0.6,1.5-1.1,1.6-1
+              c0,0,0,0-0.2,0.2c-0.3,0.3-0.3,0.4-0.3,0.5c-0.2,0.2-0.1,0.3-0.3,0.9c-0.1,0.3-0.2,0.5-0.3,0.8c-0.2,0.3-0.4,0.5-0.5,0.6
+              c-0.2,0.2-0.3,0.3-0.6,0.4C71.3,13.7,71,13.8,70.9,13.7z"/>
+          </g>
+        </svg>
+        
+        <div id="submitTour">
+          <button id="end" type="submit" form="shootList" value="Submit"></button>
+        </div>
+
+      </div>
+    
+    </footer>
+    
+    <script type="text/javascript">
+      // TIMER
+      let startBtn = document.getElementById('start');
+      let restartBtn = document.getElementById('restart');
+      let pauseBtn = document.getElementById('pause');
+      let timer = document.getElementById('timer');
+      
+      startBtn.addEventListener('click',startFunc);
+      pauseBtn.addEventListener('click',pauseFunc);
+      restartBtn.addEventListener('click',restartFunc);
+      
+      let a;
+      let b;
+      let c;
+      
+      function startStopWatch(){
+        let minutes = timer.innerText.slice(0,2)
+        let seconds = timer.innerText.slice(3,5);
+        let milliSeconds = timer.innerText.slice(6,8);
+        a = setInterval(() => {
+          minutes++;
+          if(minutes<=9){
+            minutes = `0${minutes}`
+          }
+          if(minutes=='60'){
+            minutes = '00';
+          };
+        }, 60000);
+        b = setInterval(() => {
+          seconds++;
+          if(seconds<=9){
+            seconds = `0${seconds}`
+          }
+          if(seconds=='60'){
+            seconds = '00';
+          };
+        }, 1000);
+        c = setInterval(() => {
+          milliSeconds++;
+          if(milliSeconds<=9){
+            milliSeconds = `0${milliSeconds}`
+          }
+          if(milliSeconds=='100'){
+            milliSeconds = '00';
+          };
+          timer.innerHTML = `<span id="m-s">${minutes}:${seconds}</span><span id="ms">${milliSeconds}</span>`;
+          document.getElementById('m-s').style.color = '#fffcec';
+          document.getElementById('m-s').style.textShadow = '0 0 15px rgba(255, 215, 0, 1), 0 0 45px rgba(255, 215, 0, 1), 0 0 105px rgba(255, 215, 0, 1)';
+          document.getElementById('ms').style.color = '#ff4a1c';
+          document.getElementById('ms').style.textShadow = '0 0 5px rgba(255, 0, 0, 1), 0 0 10px rgba(255, 0, 0, 1), 0 0 15px rgba(255, 0, 0, 1), 0 0 25px rgba(255, 0, 0, 1), 0 0 45px rgba(255, 0, 0, 1), 0 0 65px rgba(255, 0, 0, 1), 0 0 105px rgba(255, 0, 0, 1), 0 0 115px rgba(255, 0, 0, 1)';
+        }, 10);
+      }
+      
+      function startFunc(){
+        startBtn.style.pointerEvents = 'none';
+        restartBtn.style.pointerEvents = 'none';
+        startStopWatch();
+      };
+      
+      function pauseFunc(){
+        clearInterval(a);
+        clearInterval(b);
+        clearInterval(c);
+        startBtn.style.pointerEvents = 'auto';
+        restartBtn.style.pointerEvents = 'auto';
+      }
+
+      function restartFunc(){
+        timer.innerHTML = '<span id="m-s">00:00</span><span id="ms">00</span>';
+        restartBtn.style.pointerEvents= 'none';
+        document.getElementById('m-s').style.color = '#fffcec';
+        document.getElementById('m-s').style.textShadow = '0 0 15px rgba(255, 215, 0, 1), 0 0 45px rgba(255, 215, 0, 1), 0 0 105px rgba(255, 215, 0, 1)';
+        document.getElementById('ms').style.color = '#ff4a1c';
+        document.getElementById('ms').style.textShadow = '0 0 5px rgba(255, 0, 0, 1), 0 0 10px rgba(255, 0, 0, 1), 0 0 15px rgba(255, 0, 0, 1), 0 0 25px rgba(255, 0, 0, 1), 0 0 45px rgba(255, 0, 0, 1), 0 0 65px rgba(255, 0, 0, 1), 0 0 105px rgba(255, 0, 0, 1), 0 0 115px rgba(255, 0, 0, 1)';
+      }
+    </script>
+    
+    <script type="text/javascript">
+      // STARFIELD
+      //HTML related
+      var canvasElement = document.querySelector("canvas");
+      var canvas        = canvasElement.getContext("2d");
+      var quantity      = canvasElement.getAttribute("data-starfield");
+
+      //Javascript related
+      var stars = [];
+
+      function Star (x, y, offset, duration = 100, size = 2) {
+      //constructor
+      this.x            = x;
+      this.y            = y;
+      this.duration     = duration;
+      this.offset       = offset;
+      this.size         = size;
+      this.timer        = offset % duration;
+      
+      //functions
+      this.draw = function () {
+          //Calculate animations
+          if (this.timer > this.duration) {
+          this.timer = 0;
+          }
+          this.timer += 1;
+          
+          //Calculate
+          var framesize = Math.abs((this.timer / this.duration) - 0.5) * this.size + this.size/10;
+          
+          //Update element
+          canvas.beginPath();
+          canvas.arc(this.x, this.y, framesize, 0, Math.PI * 2, false);
+          canvas.fillStyle = "white";
+          canvas.fill();
+      }
+      }
+
+      function ShootingStar (offset, duration = 100, size = 2) {
+      //Constructor
+      this.offset   = offset;
+      this.duration = duration;
+      this.size     = size;
+      }
+
+      //Spawn stars
+      for (let i = 0; i < quantity; i++) {
+      var positionX = window.innerWidth * Math.random();
+      var positionY = window.innerHeight * Math.random();
+      var offset    = Math.random() * 100;
+      var duration  = Math.random() * 50 + 50;
+      var size      = Math.random() * 2;
+      
+      stars.push(new Star(positionX, positionY, offset, duration, size));
+      }
+
+      //Animate stars
+      function renderFrame () {
+      //Clear canvas
+      canvas.clearRect(0, 0, canvasElement.width, canvasElement.height);
+      
+      //Call all stars to update their animation
+      for (let i = 0; i < quantity; i++) {
+          stars[i].draw();
+      }
+      
+      //Loop function
+      setTimeout(renderFrame, 100);
+      }
+
+      //Set canvas size
+      canvasElement.width = window.innerWidth;
+      canvasElement.height = window.innerHeight;
+
+      //Start animation
+      renderFrame();
+    </script> 
+    
+  </body>
+  
+</html>
