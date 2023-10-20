@@ -11,7 +11,7 @@ p {
   position: relative;
   margin: 0;
   font-family: 'F60s Scoreboard Regular';
-  font-size: 18px;
+  font-size: 3vw;
   font-weight: bold;
   text-align: center;
   user-select: none;
@@ -61,7 +61,7 @@ header {
 .title {
   margin-bottom: 10px;
   font-family: "Ozone";
-  font-size: 80px;
+  font-size: 16vw;
   font-weight: normal;
 }
 
